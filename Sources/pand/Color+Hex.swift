@@ -1,7 +1,7 @@
 import SwiftUI
 
 extension Color {
-    public init?(hex: String) {
+    public init(hex: String) {
         var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
         hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")
         
@@ -14,7 +14,9 @@ extension Color {
         
         let length = hexSanitized.count
         
-        guard Scanner(string: hexSanitized).scanHexInt64(&rgb) else { return nil }
+        guard Scanner(string: hexSanitized).scanHexInt64(&rgb) else { self.init(.displayP3, red: 0, green: 255, blue: 0)
+            return
+        }
         
         if length == 6 {
             red = Double((rgb & 0xFF0000) >> 16) / 255.0
@@ -28,7 +30,7 @@ extension Color {
             opacity = Double(rgb & 0x000000FF) / 255.0
             
         } else {
-            return nil
+            self.init(.displayP3, red: 0, green: 255, blue: 0)
         }
         
         self.init(.displayP3, red: red, green: green, blue: blue, opacity: opacity)
