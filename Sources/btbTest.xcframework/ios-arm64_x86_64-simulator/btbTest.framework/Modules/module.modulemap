@@ -1,6 +1,0 @@
-framework module btbTest {
-  umbrella header "btbTest.h"
-
-  export *
-  module * { export * }
-}
