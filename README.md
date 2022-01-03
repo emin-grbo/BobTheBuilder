@@ -1,3 +1,3 @@
-# Btb
+# BobTheBuilder
 
-A description of this package.
+Package with various build/creation helpers for SwiftUI
