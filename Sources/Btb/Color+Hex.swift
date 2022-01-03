@@ -14,7 +14,7 @@ extension Color {
         
         let length = hexSanitized.count
         
-        guard Scanner(string: hexSanitized).scanHexInt64(&rgb) else { self.init(.displayP3, red: 0, green: 255, blue: 0)
+        guard Scanner(string: hexSanitized).scanHexInt64(&rgb) && length > 5 else { self.init(.displayP3, red: 0, green: 255, blue: 0)
             return
         }
         
