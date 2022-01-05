@@ -1,11 +1,11 @@
 import XCTest
-@testable import Btb
+@testable import Bob
 
-final class BtbTests: XCTestCase {
+final class BobTests: XCTestCase {
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(Btb().text, "Hello, World!")
+        XCTAssertEqual(Bob().text, "Hello, World!")
     }
 }
