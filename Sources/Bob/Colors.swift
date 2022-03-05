@@ -10,4 +10,6 @@ import SwiftUI
 
 extension Color {
     public static let boja = Color("Boja")
+    public static let boja2 = Color(hex: "ff44gg")
+    
 }
