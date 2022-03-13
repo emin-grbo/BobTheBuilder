@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SwiftUIView: View {
     var body: some View {
-        Color.boja2
+        Color.red
     }
 }
 
