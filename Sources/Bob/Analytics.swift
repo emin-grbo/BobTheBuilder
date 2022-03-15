@@ -2,6 +2,7 @@ import Foundation
 
 public enum AppType: String {
     case accessibilityAssistant
+    case peep = "app.peep"
 }
 
 public struct Analytics {
@@ -22,4 +23,4 @@ public struct Analytics {
     }
 }
 
-//https://api.countapi.xyz/create?key=appOpen&namespace=a11y
+//https://api.countapi.xyz/create?key=appOpen&namespace=app.peep&enable_reset=1
