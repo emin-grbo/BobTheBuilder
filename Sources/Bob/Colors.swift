@@ -3,7 +3,9 @@ import SwiftUI
 
 public extension Color {
 
-    static let nativeGray = Color(hex: "F7F7F7")
+    static let nativeGray_undead = Color(hex: "F7F7F7")
+    static let purple_undead = Color(hex: "#8425DF")
+    static let pink_undead = Color(hex: "#FF00E5")
     
     //MARK: Midnight
     static let midnightBlue_dark = Color(hex: "1B1C27")
