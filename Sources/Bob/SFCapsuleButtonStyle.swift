@@ -2,10 +2,10 @@ import SwiftUI
 
 public struct SFCapsuleButtonStyle: ButtonStyle {
   
-  var foregroundColor: Color = .white
-  var backgroundColor: Color = Color.purple_bob
-  var fontSize: Font = .body
-  let sfString: String
+  public let foregroundColor: Color = .white
+  public let backgroundColor: Color = Color.purple_bob
+  public let fontSize: Font = .body
+  public let sfString: String
   
   public func makeBody(configuration: Self.Configuration) -> some View {
     HStack {
