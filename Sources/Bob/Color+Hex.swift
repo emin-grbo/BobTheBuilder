@@ -37,7 +37,7 @@ extension UIColor {
 }
 
 extension Color {
-  init(hex: String) {
+  public init(hex: String) {
     self.init(UIColor(hex: hex) ?? .white)
   }
 }
