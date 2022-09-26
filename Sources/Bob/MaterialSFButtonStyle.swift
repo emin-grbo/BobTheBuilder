@@ -2,15 +2,25 @@ import SwiftUI
 
 public struct MaterialSFButtonStyle: ButtonStyle {
     
-  public var sfString: String
-  public var bold: Bool = false
-  public var color: Color = Color.bob
-  public var size: CGFloat = 40
-    
+  public init(sfString: String,
+              bold: Bool = false,
+              color: Color = Color.bob,
+              size: CGFloat = 40) {
+    self.sfString = sfString
+    self.bold = bold
+    self.color = color
+    self.size = size
+  }
+  
+  public let sfString: String
+  public let bold: Bool
+  public let color: Color
+  public let size: CGFloat
+  
   public func makeBody(configuration: Self.Configuration) -> some View {
       Image(systemName: sfString)
         .resizable()
-        .font(.body.bold())
+        .font(bold ? .body.bold() : .body)
         .symbolRenderingMode(.hierarchical)
         .foregroundColor(color)
         .frame(width: size, height: size)
