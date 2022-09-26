@@ -5,7 +5,7 @@ struct SwiftUIView: View {
     Button("button") {
       print("")
     }
-    .buttonStyle(SFCapsuleButtonStyle(sfString: "plus.circle.fill"))
+    .buttonStyle(MaterialSFNoBorderButtonStyle(sfString: "plus.circle.fill"))
   }
 }
 
