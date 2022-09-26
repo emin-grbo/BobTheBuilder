@@ -2,10 +2,10 @@ import SwiftUI
 
 public struct MaterialSFButtonStyle: ButtonStyle {
     
-  public let sfString: String
-  public let bold: Bool = false
-  public let color: Color = Color.bob
-  public let size: CGFloat = 40
+  public var sfString: String
+  public var bold: Bool = false
+  public var color: Color = Color.bob
+  public var size: CGFloat = 40
     
   public func makeBody(configuration: Self.Configuration) -> some View {
       Image(systemName: sfString)

@@ -2,4 +2,4 @@
 
 Package with various build/creation helpers for SwiftUI
 
-v0.2
+v0.3
