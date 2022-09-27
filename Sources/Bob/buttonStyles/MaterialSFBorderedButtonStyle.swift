@@ -6,35 +6,38 @@ public struct MaterialSFBorderedButtonStyle  : ButtonStyle {
   var reduceMotion
   
   public init(fontSize: Font = .title2,
+              textColor: Color = .bob,
               foregroundColor: Color = .bob,
               imageString: String? = nil,
-              sfImageString: String? = nil,
+              sfString: String? = nil,
               cornerRadius: CGFloat = 16) {
     self.fontSize = fontSize
+    self.textColor = textColor
     self.foregroundColor = foregroundColor
     self.imageString = imageString
-    self.sfImageString = sfImageString
+    self.sfString = sfString
     self.cornerRadius = cornerRadius
   }
   
   public let fontSize: Font
+  public let textColor: Color
   public let foregroundColor: Color
   public let imageString: String?
-  public let sfImageString: String?
+  public let sfString: String?
   public let cornerRadius: CGFloat
   
   public func makeBody(configuration: Self.Configuration) -> some View {
     HStack {
       if let imageString = imageString {
         Image(imageString)
-      } else if let sfImageString = sfImageString {
-        Image(systemName: sfImageString)
+      } else if let sfString = sfString {
+        Image(systemName: sfString)
           .symbolRenderingMode(.hierarchical)
       }
       configuration.label
+        .foregroundColor(textColor)
     }
     .font(fontSize.bold())
-    .frame(maxWidth: .infinity)
     .padding()
     .background(.quaternary)
     .foregroundStyle(foregroundColor)
