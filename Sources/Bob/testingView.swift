@@ -2,10 +2,11 @@ import SwiftUI
 
 struct SwiftUIView: View {
   var body: some View {
-    Button("button") {
-      print("")
-    }
-    .buttonStyle(MaterialSFNoBorderButtonStyle(sfString: "plus.circle.fill"))
+    MaterialSFNoBorderView(title: "buttonView", sfString: "trash.square.fill", bold: true)
+//    Button("button") {
+//      print("")
+//    }
+//    .buttonStyle(MaterialSFNoBorderButtonStyle(sfString: "plus.circle.fill"))
   }
 }
 

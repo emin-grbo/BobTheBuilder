@@ -29,12 +29,12 @@ public struct MaterialSFNoBorderButtonStyle: ButtonStyle {
         .padding(.trailing, 8)
         .symbolRenderingMode(.hierarchical)
         .foregroundColor(symbolColor)
-        .opacity(configuration.isPressed ? 0.8 : 1)
-        .scaleEffect(configuration.isPressed ? 1.2 : 1, anchor: .leading)
-        .blur(radius: configuration.isPressed ? 1 : 0)
       configuration.label
         .font(bold ? .body.bold() : .body)
         .foregroundColor(textColor)
+        .opacity(configuration.isPressed ? 0.8 : 1)
+        .scaleEffect(configuration.isPressed ? 1.1 : 1, anchor: .leading)
+        .blur(radius: configuration.isPressed ? 1 : 0)
     }
   }
 }
