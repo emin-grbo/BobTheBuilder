@@ -37,6 +37,7 @@ public struct MaterialSFBorderedButtonStyle  : ButtonStyle {
       configuration.label
         .foregroundColor(textColor)
     }
+    .frame(maxWidth: .infinity)
     .font(fontSize.bold())
     .padding()
     .background(.quaternary)
