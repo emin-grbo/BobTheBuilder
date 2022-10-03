@@ -1,0 +1,16 @@
+# This is an action used for running tests on BrowserStack. DRI -> @ivana, @jovan, @emin
+
+name: TestAction
+
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: curl
+        uses: wei/curl@v1
+        with:
+          args: -X POST 'https://api.countapi.xyz/hit/bgtasksample'
