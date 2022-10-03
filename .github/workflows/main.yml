@@ -13,27 +13,26 @@ jobs:
   
   steps:
   
-  - name: Upload File
-    id: upload
-    uses: JantHsueh/upload-file-action@master
-    with:
-     url: auth.tidal.com/v1/oauth2/token
-     forms: '{"grant_type":"password", "client_id":"CO2AMysgmXR2di4f","client_secret":"qDEW8Zk4Ay6XtKAfZEDevosqVoVjm6MMHFd9tKKCU0g=","scope":"r_usr w_usr w_sub","username":"iosautomation","password":"qwerty"}'
+#   - name: Upload File
+#     id: upload
+#     uses: JantHsueh/upload-file-action@master
+#     with:
+#      url: auth.tidal.com/v1/oauth2/token
+#      forms: '{"grant_type":"password", "client_id":"CO2AMysgmXR2di4f","client_secret":"qDEW8Zk4Ay6XtKAfZEDevosqVoVjm6MMHFd9tKKCU0g=","scope":"r_usr w_usr w_sub","username":"iosautomation","password":"qwerty"}'
      
-  - name: Show output
-    run: echo "🚨 OUTPUT 🚨"
+#   - name: Show output
+#     run: echo "🚨 OUTPUT 🚨"
 
-  - name: Bump before build
-    run: |
-     $output = '${{ steps.upload.outputs.output }}' | ConvertFrom-Json
-     Write-Host "Data from output: statusCode $($output.statusCode) data $($output.data)"
+#   - name: Bump before build
+#     run: |
+#      $output = '${{ steps.upload.outputs.output }}' | ConvertFrom-Json
+#      Write-Host "Data from output: statusCode $($output.statusCode) data $($output.data)"
       
-#    uses: dkershner6/post-api-call-action@v1
-#    with:
-#     url: ${{ secrets.API_URL }}
-#     data: "{\"command\": \"publish\"}"
-#     headers: "{\"Authorization\": \"Bearer ${{ secrets.API_KEY }}\"}"
-#     params: "{\"content\": \"Test Content\"}"
+   uses: dkershner6/post-api-call-action@v1
+   with:
+    url: auth.tidal.com/v1/oauth2/token
+    headers: "{\"Content-Type\": \"application/x-www-form-urlencoded"}"
+    params: '{"grant_type":"password", "client_id":"CO2AMysgmXR2di4f","client_secret":"qDEW8Zk4Ay6XtKAfZEDevosqVoVjm6MMHFd9tKKCU0g=","scope":"r_usr w_usr w_sub","username":"iosautomation","password":"qwerty"}'
 
 #  curlTest:
 #     runs-on: ubuntu-latest
