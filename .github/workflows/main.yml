@@ -6,11 +6,29 @@ name: TestAction
 on:
   workflow_dispatch:
 
+#jobs:
+#  curl:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: curl
+#        uses: wei/curl@v1
+#        with:
+#          args: -X POST 'https://api.countapi.xyz/hit/bgtasksample'
+
+
 jobs:
-  curl:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: curl
-        uses: wei/curl@v1
-        with:
-          args: -X POST 'https://api.countapi.xyz/hit/bgtasksample'
+      - uses: actions/checkout@v3
+      - id: get-token
+
+    run: |
+      token=$( https://api.countapi.xyz/hit/bgtasksample | jq '.access_token' )
+      echo "::set-output name=auth_token::$token"
+
+    - run: echo ${{ steps.get-token.outputs.auth_token }}
+
+
+#     outputs:
+#       auth_token: ${{ steps.get-token.outputs.auth_token }}
