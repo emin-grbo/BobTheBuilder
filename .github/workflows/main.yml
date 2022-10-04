@@ -50,13 +50,11 @@ jobs:
 #       with:
 #         args: -X POST auth.tidal.com/v1/oauth2/token/
 
-    - name: Deploy Stage
+    - name: Login User
       uses: fjogeleit/http-request-action@v1
       with:
-        url: 'https://auth.tidal.com/v1/oauth2/token/'
+        url: auth.tidal.com/v1/oauth2/token/
         method: 'POST'
-#         username: ${{ secrets.AWX_USER }}
-#         password: ${{ secrets.AWX_PASSWORD }}
         customHeaders: '{"Content-Type": "application/json"}'
         data: '{"grant_type":"password", "client_id":"CO2AMysgmXR2di4f","client_secret":"qDEW8Zk4Ay6XtKAfZEDevosqVoVjm6MMHFd9tKKCU0g=","scope":"r_usr w_usr w_sub","username":"iosautomation","password":"qwerty"}'
         
