@@ -45,16 +45,19 @@ jobs:
 #        headers: '{"Content-Type": "application/x-www-form-urlencoded"}'
 #        params: '{"grant_type":"password", "client_id":"CO2AMysgmXR2di4f","client_secret":"qDEW8Zk4Ay6XtKAfZEDevosqVoVjm6MMHFd9tKKCU0g=","scope":"r_usr w_usr w_sub","username":"iosautomation","password":"qwerty"}'
 
-    - name: curl
-      uses: wei/curl@v1
+#     - name: curl
+#       uses: wei/curl@v1
+#       with:
+#         args: -X POST auth.tidal.com/v1/oauth2/token/
+
+    - name: Deploy Stage
+      uses: fjogeleit/http-request-action@v1
       with:
-        args: -X --location --request POST 'auth.tidal.com/v1/oauth2/token' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode: 'grant_type=password',
---data-urlencode: 'client_id=CO2AMysgmXR2di4f' \
---data-urlencode: 'client_secret=qDEW8Zk4Ay6XtKAfZEDevosqVoVjm6MMHFd9tKKCU0g=' \
---data-urlencode: 'scope=r_usr w_usr w_sub' \
---data-urlencode: 'username=username@tidal.com' \
---data-urlencode: 'password=12345'
+        url: 'https://auth.tidal.com/v1/oauth2/token/'
+        method: 'POST'
+#         username: ${{ secrets.AWX_USER }}
+#         password: ${{ secrets.AWX_PASSWORD }}
+        customHeaders: '{"Content-Type": "application/json"}'
+        data: '{"grant_type":"password", "client_id":"CO2AMysgmXR2di4f","client_secret":"qDEW8Zk4Ay6XtKAfZEDevosqVoVjm6MMHFd9tKKCU0g=","scope":"r_usr w_usr w_sub","username":"iosautomation","password":"qwerty"}'
         
         
