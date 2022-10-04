@@ -27,12 +27,12 @@ jobs:
 #     run: |
 #      $output = '${{ steps.upload.outputs.output }}' | ConvertFrom-Json
 #      Write-Host "Data from output: statusCode $($output.statusCode) data $($output.data)"
-      
-   uses: dkershner6/post-api-call-action@v1
-   with:
-    url: auth.tidal.com/v1/oauth2/token
-    headers: "{\"Content-Type\": \"application/x-www-form-urlencoded"}"
-    params: '{"grant_type":"password", "client_id":"CO2AMysgmXR2di4f","client_secret":"qDEW8Zk4Ay6XtKAfZEDevosqVoVjm6MMHFd9tKKCU0g=","scope":"r_usr w_usr w_sub","username":"iosautomation","password":"qwerty"}'
+    - name: Code check out
+      uses: dkershner6/post-api-call-action@v1
+      with:
+       url: auth.tidal.com/v1/oauth2/token
+       headers: '{"Content-Type": "application/x-www-form-urlencoded"}'
+       params: '{"grant_type":"password", "client_id":"CO2AMysgmXR2di4f","client_secret":"qDEW8Zk4Ay6XtKAfZEDevosqVoVjm6MMHFd9tKKCU0g=","scope":"r_usr w_usr w_sub","username":"iosautomation","password":"qwerty"}'
 
 #  curlTest:
 #     runs-on: ubuntu-latest
