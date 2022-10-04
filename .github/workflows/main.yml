@@ -18,7 +18,8 @@ jobs:
     with:
      node-version: ${{ matrix.node-version }}
 
-  - run: npm install --legacy-peer-deps     
+  - run: npm install
+  - run: npm install --legacy-peer-deps
   - run: npm run build    
     
   - name: Upload File
