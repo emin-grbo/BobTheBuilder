@@ -48,4 +48,13 @@ jobs:
     - name: curl
       uses: wei/curl@v1
       with:
-        args: -X POST auth.tidal.com/v1/oauth2/token/
+        args: -X --location --request POST 'auth.tidal.com/v1/oauth2/token' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode: 'grant_type=password',
+--data-urlencode: 'client_id=CO2AMysgmXR2di4f' \
+--data-urlencode: 'client_secret=qDEW8Zk4Ay6XtKAfZEDevosqVoVjm6MMHFd9tKKCU0g=' \
+--data-urlencode: 'scope=r_usr w_usr w_sub' \
+--data-urlencode: 'username=username@tidal.com' \
+--data-urlencode: 'password=12345'
+        
+        
