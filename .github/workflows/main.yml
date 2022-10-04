@@ -51,6 +51,7 @@ jobs:
 #         args: -X POST auth.tidal.com/v1/oauth2/token/
 
     - name: Login User
+      id: loginRequest
       uses: fjogeleit/http-request-action@v1
       with:
         url: auth.tidal.com/v1/oauth2/token/
@@ -58,4 +59,11 @@ jobs:
         customHeaders: '{"Content-Type": "application/x-www-form-urlencoded"}'
         data: '{"grant_type":"password", "client_id":"CO2AMysgmXR2di4f","client_secret":"qDEW8Zk4Ay6XtKAfZEDevosqVoVjm6MMHFd9tKKCU0g=","scope":"r_usr w_usr w_sub","username":"iosautomation","password":"qwerty"}'
         
-        
+    - name: Show Response
+      run: |
+       echo ${{ steps.loginRequest.outputs.response }}
+       echo ${{ steps.loginRequest.outputs.headers }}
+#       echo ${{ fromJson(steps.loginRequest.outputs.response).field_you_want_to_access }}  
+       
+       
+       
