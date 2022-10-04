@@ -55,6 +55,7 @@ jobs:
       with:
         url: auth.tidal.com/v1/oauth2/token/
         method: 'POST'
+        customHeaders: '{"Content-Type": "application/x-www-form-urlencoded"}'
         data: '{"grant_type":"password", "client_id":"CO2AMysgmXR2di4f","client_secret":"qDEW8Zk4Ay6XtKAfZEDevosqVoVjm6MMHFd9tKKCU0g=","scope":"r_usr w_usr w_sub","username":"iosautomation","password":"qwerty"}'
         
         
