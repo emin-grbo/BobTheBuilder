@@ -13,11 +13,18 @@ jobs:
   
   steps:
   
+  - name: Use Node.js ${{ matrix.node-version }}
+    uses: actions/setup-node@v1
+    with:
+      node-version: ${{ matrix.node-version }}
+
+  - run: install url-to-options
+ 
   - name: Upload File
     id: upload
     uses: JantHsueh/upload-file-action@master
     with:
-     url: https:auth.tidal.com/v1/oauth2/token
+     url: urlToOptions('https:auth.tidal.com/v1/oauth2/token')
      forms: '{"grant_type":"password", "client_id":"CO2AMysgmXR2di4f","client_secret":"qDEW8Zk4Ay6XtKAfZEDevosqVoVjm6MMHFd9tKKCU0g=","scope":"r_usr w_usr w_sub","username":"iosautomation","password":"qwerty"}'
      fileForms: '{}'
      
