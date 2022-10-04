@@ -13,6 +13,14 @@ jobs:
   
   steps:
  
+  - name: Use Node.js ${{ matrix.node-version }}
+    uses: actions/setup-node@v1
+    with:
+     node-version: ${{ matrix.node-version }}
+
+  - run: npm install --legacy-peer-deps     
+  - run: npm run build    
+    
   - name: Upload File
     id: upload
     uses: JantHsueh/upload-file-action@master
