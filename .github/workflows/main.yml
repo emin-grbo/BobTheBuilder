@@ -13,8 +13,8 @@ jobs:
   
   steps:
   
-  - name: Use Node.js ${{ matrix.node-version }}
-  - uses: bahmutov/npm-install@v1
+  - name: Install UTP
+    uses: bahmutov/npm-install@v1
   - run: npm url-to-options
  
   - name: Upload File
