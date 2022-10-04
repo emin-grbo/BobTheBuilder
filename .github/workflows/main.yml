@@ -13,10 +13,14 @@ jobs:
   
   steps:
   
+  - name: Install
+  - run: npm install
+  
   - name: Install UTP
     uses: bahmutov/npm-install@v1
     with:
       useLockFile: false
+  - run: npm install
   - run: npm url-to-options
  
   - name: Upload File
