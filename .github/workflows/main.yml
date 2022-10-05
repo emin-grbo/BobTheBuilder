@@ -42,7 +42,7 @@ jobs:
         username: 'emingrbo_7jsnct'
         password: 'VW2aXyJNeVNpd6KPEyxY'
         data: ''
-        files: '{ "file":"test.txt" }'
+        files: '{ "file":"${{ github.workspace }}/test.txt" }'
 
       
       # WORKING, BUT SET ASIDE FOR NOW
