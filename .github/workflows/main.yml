@@ -45,4 +45,4 @@ jobs:
         username: 'emingrbo_7jsnct'
         password: 'VW2aXyJNeVNpd6KPEyxY'
         data: '{ "custom_id": "test" }'
-        data: '{ "file": "${{ github.workspace }}/test.ipa" }'
+        files: '{ "file": "${{ github.workspace }}/test.ipa" }'
