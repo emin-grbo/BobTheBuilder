@@ -1,6 +1,4 @@
 # This is an action used for running tests on BrowserStack. DRI -> @ivana, @jovan, @emin
-$buildnumber = 0
-
 name: TestAction
 
 # Controls when the workflow will run
@@ -32,7 +30,11 @@ jobs:
 #       echo ${{ fromJson(steps.loginRequest.outputs.response).access_token | fold -w90 }}
        
 # we cannot send the token in full length to BS and need to split it into parts under 100 chars
-#    - name: Show token parts
+    - name: Show token parts
+    - uses: devops-actions/json-to-file@v1.0.0
+  			with:
+    		json: '{"test": "test"}'
+    		filename: 'test.json'
 #       args:['./scripts.bash.sh']
 #      run: |
 #        echo "abcdefg" | fold -w2
