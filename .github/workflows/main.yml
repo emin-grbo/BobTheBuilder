@@ -42,7 +42,7 @@ jobs:
 #        username: 'emingrbo_7jsnct'
 #        password: 'VW2aXyJNeVNpd6KPEyxY'
         method: 'POST'
-        files: '{ "file": "${{ GITHUB_WORKSPACE }}/test.txt" }'
+        files: '{ "file": "${{ github.workspace }}/test.txt" }'
 
       
 # WORKING, BUT SET ASIDE FOR NOW ===========================
