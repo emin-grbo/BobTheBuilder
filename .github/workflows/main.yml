@@ -32,7 +32,5 @@ jobs:
        
 # we cannot send the token in full length to BS and need to split it into parts under 100 chars
     - name: Show token parts
-       script:|
-       #!/bin/bash
-       test = "abcdefg" | fold -w2 -s
+       args: ['./scripts.bash.sh']
 #       echo "abcdefg" | fold -w2 -s
