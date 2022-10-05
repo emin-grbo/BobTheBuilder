@@ -42,7 +42,7 @@ jobs:
 #        username: 'emingrbo_7jsnct'
 #        password: 'VW2aXyJNeVNpd6KPEyxY'
         method: 'POST'
-        files: '{ "file": "${{ github.workspace }}/test.txt" }'
+        files: '{ "file": "https://github.com/roblack/BobTheBuilder/blob/a9de106171dd92973e34734ac329d2279eb274ee/test.txt"'
 
       
 # WORKING, BUT SET ASIDE FOR NOW ===========================
