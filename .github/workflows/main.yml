@@ -1,4 +1,4 @@
-# This is an action used for running tests on BrowserStack. DRI -> @ivana, @jovan, @emin
+# This is an action used for running tests on BrowserStack. DRI -> @ivana, @jovan, @emin
 
 name: TestAction
 
@@ -7,12 +7,31 @@ on: [push, workflow_dispatch]
 
 jobs:
 
- build:
+# auth with TIDAL
+ auth:
   name: Get User Token 
   runs-on: ubuntu-latest
   
   steps:
- 
+  
+# sending the login request to our BE which is using a separate client/secret for test login. This way we get ONLY the access token which is valid for 1hr
+    - name: Fetch User Token
+      id: loginRequest
+      uses: fjogeleit/http-request-action@v1
+      with:
+        url: https://auth.tidal.com/v1/oauth2/token/
+        method: 'POST'
+        customHeaders: '{"Content-Type": "application/x-www-form-urlencoded"}'
+        data: 'client_id=CO2AMysgmXR2di4f&client_secret=qDEW8Zk4Ay6XtKAfZEDevosqVoVjm6MMHFd9tKKCU0g=&grant_type=password&scope=r_usr w_usr w_sub&username=iosautomation&password=qwerty'
+        
+    - name: Show Response
+      run: |
+       echo ${{ steps.loginRequest.outputs.response }}
+       echo ${{ steps.loginRequest.outputs.headers }}
+       echo ${{ fromJson(steps.loginRequest.outputs.response).access_token }}  
+       
+       
+        
 #   - name: Use Node.js ${{ matrix.node-version }}
 #     uses: actions/setup-node@v1
 #     with:
@@ -20,7 +39,7 @@ jobs:
 
 #   - run: npm install
 #   - run: npm install --legacy-peer-deps
-#   - run: npm run build    
+#   - run: npm run build
     
 #   - name: Upload File
 #     id: upload
@@ -49,21 +68,5 @@ jobs:
 #       uses: wei/curl@v1
 #       with:
 #         args: -X POST auth.tidal.com/v1/oauth2/token/
-
-    - name: Login User
-      id: loginRequest
-      uses: fjogeleit/http-request-action@v1
-      with:
-        url: https://auth.tidal.com/v1/oauth2/token/
-        method: 'POST'
-        customHeaders: '{"Content-Type": "application/x-www-form-urlencoded"}'
-        data: 'client_id=CO2AMysgmXR2di4f&client_secret=qDEW8Zk4Ay6XtKAfZEDevosqVoVjm6MMHFd9tKKCU0g=&grant_type=password&scope=r_usr w_usr w_sub&username=iosautomation&password=qwerty'
-        
-    - name: Show Response
-      run: |
-       echo ${{ steps.loginRequest.outputs.response }}
-       echo ${{ steps.loginRequest.outputs.headers }}
-       echo ${{ fromJson(steps.loginRequest.outputs.response).access_token }}  
-       
        
        
