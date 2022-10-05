@@ -28,7 +28,21 @@ jobs:
       run: |
        echo ${{ steps.loginRequest.outputs.response }}
        echo ${{ steps.loginRequest.outputs.headers }}
-       echo ${{ fromJson(steps.loginRequest.outputs.response).access_token }}  
+       echo ${{ fromJson(steps.loginRequest.outputs.response).access_token }}
+       
+# we cannot send the token in full length to BS and need to split it into parts under 100 chars
+    - name: Split version code
+    	uses: xom9ikk/split@v1
+      id: split
+      	with: ${{ fromJson(steps.loginRequest.outputs.response).access_token }}
+          string: 2.17.3
+          limit: 90
+
+    - name: Show token parts
+      	with:
+          major: ${{ steps.split.outputs._0 }}
+          minor: ${{ steps.split.outputs._1 }}
+          patch: ${{ steps.split.outputs._2 }}
        
        
         
