@@ -34,4 +34,4 @@ jobs:
     - name: Show token parts
       run: |
        echo "abcdefg" | fold -w2
-       echo "abcdefg" | grep -o .
+       echo "abcdefg" | grep -10 .
