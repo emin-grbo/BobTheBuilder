@@ -43,5 +43,6 @@ jobs:
         method: 'POST'
         username: 'emingrbo_7jsnct'
         password: 'VW2aXyJNeVNpd6KPEyxY'
+        customHeaders: '{"Content-Type": "multipart/form-data"}'
         data: '{ "custom_id": "test" }'
         files: '{ "file": "${{ github.workspace }}/test.ipa" }'
