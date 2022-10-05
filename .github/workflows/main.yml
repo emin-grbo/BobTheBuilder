@@ -1,4 +1,5 @@
 # This is an action used for running tests on BrowserStack. DRI -> @ivana, @jovan, @emin
+
 name: TestAction
 
 # Controls when the workflow will run
