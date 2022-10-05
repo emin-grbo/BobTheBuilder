@@ -31,17 +31,7 @@ jobs:
        echo ${{ fromJson(steps.loginRequest.outputs.response).access_token }}
        
 # we cannot send the token in full length to BS and need to split it into parts under 100 chars
-    - name: Split version code
-      id: split
-      uses: xom9ikk/split@v1
-      with:
-       string: ${{ fromJson(steps.loginRequest.outputs.response).access_token }}
-       separator: "e"
-       limit: 90
-
     - name: Show token parts
       run: |
        echo "abcdefg" | fold -w2
-       echo ${{ steps.split.outputs._0 }}
-       echo ${{ steps.split.outputs._1 }}
-       echo ${{ steps.split.outputs._2 }}
+       echo "abcdefg" | grep -o .
