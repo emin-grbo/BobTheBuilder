@@ -34,24 +34,45 @@ jobs:
 
   steps:
 
-    - name: Upload IPA
-      id: uploadIPArequest
-      uses: fjogeleit/http-request-action@v1
-      with:
-        url: https://api-cloud.browserstack.com/app-automate/xcuitest/v2/build
-        username: 'emingrbo_7jsnct'
-        password: 'VW2aXyJNeVNpd6KPEyxY'
-        data: ''
-        files: '{ "file":"${{ github.workspace }}/test.txt" }'
+     - name: Send HTTP Form-Data POST Request
+       uses: alikamal1/Form_Data_HTTP_POST_Action@main
+       with:
+         url: 'https://api-cloud.browserstack.com/app-automate/xcuitest/v2/build'
+         file: 'test.txt'
+#    - name: Upload IPA
+#      id: uploadIPArequest
+#      uses: fjogeleit/http-request-action@v1
+#      with:
+#        url: https://api-cloud.browserstack.com/app-automate/xcuitest/v2/build
+#        username: 'emingrbo_7jsnct'
+#        password: 'VW2aXyJNeVNpd6KPEyxY'
+#        data: ''
+#        files: '{ "file":"${{ github.workspace }}/test.txt" }'
 
       
-      # WORKING, BUT SET ASIDE FOR NOW
+# WORKING, BUT SET ASIDE FOR NOW ===========================
 # start BS test execution
 # initTest:
 #  name: Execute Test
 #  runs-on: ubuntu-latest
 #
 #  steps:
+#
+# init postman script
+#     - name: Setup Node (required for Postman)
+#       uses: actions/setup-node@v1
+#       with:
+#       	 node-version: '14.x'
+#
+#     - name: Install newman
+#       run: |
+#         npm install -g newman
+#         npm install -g newman-reporter-html
+#     - name: Run POSTMAN collection
+#       run: >
+#         newman
+#         run $POSTMAN_COLLECTION_URL
+#         -e $POSTMAN_ENVIRONMENT_URL
 #
 #    - name: Execute Test
 #      uses: fjogeleit/http-request-action@v1
