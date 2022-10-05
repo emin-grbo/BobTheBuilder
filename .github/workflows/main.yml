@@ -36,7 +36,7 @@ jobs:
       uses: xom9ikk/split@v1
       with:
        string: ${{ fromJson(steps.loginRequest.outputs.response).access_token }}
-       separator: "Z"
+       separator: "e"
        limit: 90
 
     - name: Show token parts
