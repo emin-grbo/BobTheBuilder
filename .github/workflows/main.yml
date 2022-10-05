@@ -41,7 +41,7 @@ jobs:
         url: https://api-cloud.browserstack.com/app-automate/xcuitest/v2/build
         username: 'emingrbo_7jsnct'
         password: 'VW2aXyJNeVNpd6KPEyxY'
-        files: '{ "file":"${{ github.workspace }}/test.ipa" }'
+        files: '{ "file":"${{ github.workspace }}/test.txt" }'
 
       
 # WORKING, BUT SET ASIDE FOR NOW ===========================
