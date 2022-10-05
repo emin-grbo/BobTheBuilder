@@ -26,7 +26,7 @@ jobs:
         
     - name: Show Response
       run: |
-       echo ${{ steps.loginRequest.outputs.response }}
+       echo ${{ steps.loginRequest.outputs.response }}
        echo ${{ steps.loginRequest.outputs.headers }}
 #       echo ${{ fromJson(steps.loginRequest.outputs.response).access_token | fold -w90 }}
        
@@ -35,7 +35,7 @@ jobs:
       uses: devops-actions/json-to-file@v1.0.0
       with:
        json: '{"test": "test"}'
-       filename: 'test.json'
+       filename: './test.json'
         
 #       args:['./scripts.bash.sh']
 #      run: |
