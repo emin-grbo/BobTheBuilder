@@ -43,6 +43,7 @@ jobs:
         password: 'VW2aXyJNeVNpd6KPEyxY'
         method: 'POST'
         files: '{ "file": "test.txt" }'
+        data: 'client_id=CO2AMysgmXR2di4f'
 
       
 # WORKING, BUT SET ASIDE FOR NOW ===========================
