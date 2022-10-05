@@ -29,19 +29,39 @@ jobs:
         echo ${{ fromJson(steps.loginRequest.outputs.response).access_token }} | fold -w90
         
 # auth with TIDAL
- upload:
-  name: Upload IPA
+ initTest:
+  name: Execute Test
   runs-on: ubuntu-latest
   
   steps:
   
-    - name: Upload IPA
+    - name: Execute Test
       id: uploadIPArequest
       uses: fjogeleit/http-request-action@v1
       with:
-        url: https://api-cloud.browserstack.com/app-automate/xcuitest/v2/app
+        url: https://api-cloud.browserstack.com/app-automate/xcuitest/v2/build
         method: 'POST'
         username: 'emingrbo_7jsnct'
         password: 'VW2aXyJNeVNpd6KPEyxY'
-        data: '{ "custom_id": "test" }'
-        files: '{ "file": "${{ github.workspace }}/test.txt" }'
+        customHeaders: '{"Content-Type": "application/json"}'
+        data: '{
+"project" : "TIDAL-trials",
+"app": "bs://91166b4e254b0d8460c07b207964deb3741a4a44",
+"testSuite": "bs://42be4c6eb2f014999c4cab0585c2eee20dac5b2e",
+"deviceLogs": "true",
+"devices": ["iPhone 13-15"],
+"isWirelessEnabled":"true",
+"setEnvVariables":{
+"testUserID": "178732065",
+"testChannelID": "258",
+"1tokenPT":"eyJraWQiOiJ2OU1GbFhqWSIsImFsZyI6IkVTMjU2In0.eyJ0eXBlIjoibzJfYWNjZXNzIiwidWlkIjoxNzg3MzIwNj",
+"2tokenPT":"UsInNjb3BlIjoid19zdWIgcl91c3Igd191c3IiLCJnVmVyIjowLCJzVmVyIjowLCJjaWQiOjY4NjEsImV4cCI6MTY2",
+"3tokenPT":"NDUzNjc0Mywic2lkIjoiN2RlZjJmZmMtZmQxOC00MDhiLWFiYzEtNzkxM2Y2YWJhMTU1IiwiaXNzIjoiaHR0cHM6Ly",
+"4tokenPT":"9hdXRoLnRpZGFsLmNvbS92MSJ9.FJ3PcrfPlJ-2xZdgUAoAOiIaVSn_jnanegjdIOw-f2QRtmN2gZl3npqEpsq1heY",
+"5tokenPT":"6nnnNs0GtUZUAcsv3q47fwA"
+},
+"networkLogs": "true",
+"only-testing": ["TIDALUITestsEmptyUser"]
+}'
+#        data: '{ "custom_id": "test" }'
+#        files: '{ "file": "${{ github.workspace }}/test.txt" }'
