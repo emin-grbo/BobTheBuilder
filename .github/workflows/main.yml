@@ -39,7 +39,7 @@ jobs:
       id: loginRequest
       uses: fjogeleit/http-request-action@v1
       with:
-        url: https://auth.tidal.com/v1/oauth2/token/
+        url: https://api-cloud.browserstack.com/app-automate/xcuitest/v2/app
         method: 'POST'
         customHeaders: '{"Content-Type": "application/x-www-form-urlencoded"}'
         username: 'emingrbo_7jsnct'
