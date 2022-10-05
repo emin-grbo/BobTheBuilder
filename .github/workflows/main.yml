@@ -35,7 +35,7 @@ jobs:
       uses: xom9ikk/split@v1
       id: split
       	with:
-          string: ${{ fromJson(steps.loginRequest.outputs.response).access_token }}
+          string: test
           limit: 90
 
     - name: Show token parts
