@@ -38,7 +38,7 @@ jobs:
       id: uploadIPArequest
       uses: fjogeleit/http-request-action@v1
       with:
-        url: https://api-cloud.browserstack.com/app-automate/xcuitest/v2/build
+        url: 'https://postman-echo.com/post' #https://api-cloud.browserstack.com/app-automate/xcuitest/v2/build
         username: 'emingrbo_7jsnct'
         password: 'VW2aXyJNeVNpd6KPEyxY'
         method: 'POST'
