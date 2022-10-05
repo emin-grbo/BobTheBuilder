@@ -26,10 +26,12 @@ jobs:
         
     - name: Show Response
       run: |
-       echo ${{ steps.loginRequest.outputs.response }}
-       echo ${{ steps.loginRequest.outputs.headers }}
-       echo ${{ fromJson(steps.loginRequest.outputs.response).access_token }}
+       echo ${{ fromJson(steps.loginRequest.outputs.response).access_token | fold -w90 }}
+#       echo ${{ steps.loginRequest.outputs.response }}
+#       echo ${{ steps.loginRequest.outputs.headers }}
        
 # we cannot send the token in full length to BS and need to split it into parts under 100 chars
-    - name: Show token parts
-      run: ./scripts.bash.sh
+#    - name: Show token parts
+#       args:['./scripts.bash.sh']
+#      run: |
+#        echo "abcdefg" | fold -w2
