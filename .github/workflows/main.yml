@@ -40,6 +40,6 @@ jobs:
 
     - name: Show token parts
       run: |
-       echo: ${{ steps.split.outputs._0 }}
-       echo: ${{ steps.split.outputs._1 }}
-       echo: ${{ steps.split.outputs._2 }}
+       echo ${{ steps.split.outputs._0 }}
+       echo ${{ steps.split.outputs._1 }}
+       echo ${{ steps.split.outputs._2 }}
