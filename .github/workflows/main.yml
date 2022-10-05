@@ -34,12 +34,12 @@ jobs:
     - name: Split version code
       id: split
       uses: xom9ikk/split@v1
-      	with:
-          string: ${{ fromJson(steps.loginRequest.outputs.response).access_token }}
-          limit: 90
+      with:
+       string: ${{ fromJson(steps.loginRequest.outputs.response).access_token }}
+       limit: 90
 
     - name: Show token parts
-      	with:
-          major: ${{ steps.split.outputs._0 }}
-          minor: ${{ steps.split.outputs._1 }}
-          patch: ${{ steps.split.outputs._2 }}
+      with:
+       major: ${{ steps.split.outputs._0 }}
+       minor: ${{ steps.split.outputs._1 }}
+       patch: ${{ steps.split.outputs._2 }}
