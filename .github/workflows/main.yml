@@ -26,7 +26,7 @@ jobs:
         
     - name: Show Response
       run: |
-       echo ${{ steps.loginRequest.outputs.response }}
+       echo ${{ steps.loginRequest.outputs.response }}
        echo ${{ steps.loginRequest.outputs.headers }}
 #       echo ${{ fromJson(steps.loginRequest.outputs.response).access_token | fold -w90 }}
        
