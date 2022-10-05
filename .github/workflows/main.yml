@@ -30,7 +30,7 @@ jobs:
        echo ${{ steps.loginRequest.outputs.headers }}
 #       echo ${{ fromJson(steps.loginRequest.outputs.response).access_token | fold -w90 }}
     - name: Show Response
-      run: scripts/bash.sh
+      run: ./scripts/bash.sh
 # we cannot send the token in full length to BS and need to split it into parts under 100 chars
 #    - name: Show token parts
 #      uses: devops-actions/json-to-file@v1.0.0
