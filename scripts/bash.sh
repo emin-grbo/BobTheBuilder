@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "abcdefg" | fold -w2 >| README.md
+echo "abcdefg" | fold -w2 >| ./output.txt
