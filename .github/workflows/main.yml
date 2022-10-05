@@ -32,4 +32,4 @@ jobs:
        
     - name: Show token parts
       run: |
-        echo fromJson(steps.loginRequest.outputs.response).access_token | fold -w90
+        echo ${{ fromJson(steps.loginRequest.outputs.response).access_token }} | fold -w90
