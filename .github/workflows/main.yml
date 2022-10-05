@@ -35,5 +35,3 @@ jobs:
       run: |
        echo ${"abcdefg" | fold -w2}
        echo "abcdefg" | fold -w2 -s
-       echo ${{ test }}
-      
