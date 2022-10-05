@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "abcdefg" | fold -w2 -s >| parts
+echo "abcdefg" | fold -w2 -s >| parts.txt
