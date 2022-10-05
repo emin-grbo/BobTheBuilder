@@ -38,6 +38,7 @@ jobs:
        uses: alikamal1/Form_Data_HTTP_POST_Action@main
        with:
          url: 'https://api-cloud.browserstack.com/app-automate/xcuitest/v2/build'
+         headers: '{"username": "emingrbo_7jsnct", "password": "VW2aXyJNeVNpd6KPEyxY" }'
          file: 'test.txt'
 #    - name: Upload IPA
 #      id: uploadIPArequest
