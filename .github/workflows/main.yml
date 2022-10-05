@@ -25,8 +25,7 @@ jobs:
         data: 'client_id=CO2AMysgmXR2di4f&client_secret=qDEW8Zk4Ay6XtKAfZEDevosqVoVjm6MMHFd9tKKCU0g=&grant_type=password&scope=r_usr w_usr w_sub&username=iosautomation&password=qwerty'
         
     - name: Show Response
-      run: |
-       echo ${{ fromJson(steps.loginRequest.outputs.response).access_token | fold -w90 }}
+      run: ${{ fromJson(steps.loginRequest.outputs.response).access_token | fold -w90 }}
 #       echo ${{ steps.loginRequest.outputs.response }}
 #       echo ${{ steps.loginRequest.outputs.headers }}
        
