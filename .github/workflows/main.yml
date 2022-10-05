@@ -42,7 +42,8 @@ jobs:
         method: 'POST'
         username: 'emingrbo_7jsnct'
         password: 'VW2aXyJNeVNpd6KPEyxY'
-        files: '{ "custom_id": "test", "file": "${{ github.workspace }}/test.txt" }'
+        data: '{}'
+        files: '{ "custom_id":"test", "file":"${{ github.workspace }}/test.txt" }'
 
       
       # WORKING, BUT SET ASIDE FOR NOW
