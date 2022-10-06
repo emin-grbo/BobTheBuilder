@@ -8,24 +8,23 @@ public func withReduceMotionAnimation<Result>(_ animation: Animation? = .default
   }
 }
 
-//struct AnimationWithReduceMotion: ViewModifier {
-//  
-//  var animation: Animation?
-//  let value: any Equatable
-//  
-//  func body(content: Content) -> some View {
-//    if UIAccessibility.isReduceMotionEnabled {
-//      return content
-//        .animation(animation, value: value)
-//    } else {
-//      return content
-//    }
-//  }
-//}
-//
-//extension View {
-//  func animationWithReducedMotion<V>(_ animation: Animation?,
-//                                     value: V) -> some View where V : Equatable {
-//    modifier(AnimationWithReduceMotion(animation: animation, value: value))
-//  }
-//}
+struct AnimationWithReduceMotion<V: Equatable>: ViewModifier {
+  
+  @Environment(\.accessibilityReduceMotion)
+  private var reduceMotion
+  
+  var animation: Animation?
+  let value: V
+  
+  func body(content: Content) -> some View {
+    content
+      .animation(reduceMotion ? nil : animation, value: value)
+  }
+}
+
+extension View {
+  func animationWithReducedMotion<V>(_ animation: Animation?,
+                                     value: V) -> some View where V : Equatable {
+    modifier(AnimationWithReduceMotion(animation: animation, value: value))
+  }
+}
