@@ -9,17 +9,18 @@ public func withReduceMotionAnimation<Result>(_ animation: Animation? = .default
 }
 
 //struct AnimationWithReduceMotion: ViewModifier {
-//
+//  
 //  var animation: Animation?
 //  let value: any Equatable
-//
+//  
 //  func body(content: Content) -> some View {
-//    content
-//      .animation2(animation, value: value)
+//    if UIAccessibility.isReduceMotionEnabled {
+//      return content
+//        .animation(animation, value: value)
+//    } else {
+//      return content
+//    }
 //  }
-//
-//
-//
 //}
 //
 //extension View {
