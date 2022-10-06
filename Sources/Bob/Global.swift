@@ -22,7 +22,7 @@ struct AnimationWithReduceMotion<V: Equatable>: ViewModifier {
   }
 }
 
-extension View {
+public extension View {
   func animationWithReducedMotion<V>(_ animation: Animation?,
                                      value: V) -> some View where V : Equatable {
     modifier(AnimationWithReduceMotion(animation: animation, value: value))
