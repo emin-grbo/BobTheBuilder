@@ -2,10 +2,8 @@ import SwiftUI
 
 struct SwiftUIView: View {
   var body: some View {
-    Button("button") {
-      print("")
-    }
-    .buttonStyle(MaterialSFButtonStyle(sfString: "eye.slash.fill"))
+    Text("POPULAR")
+      .materialText()
   }
 }
 
