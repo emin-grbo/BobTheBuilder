@@ -43,6 +43,7 @@ public struct MaterialSFBorderedButtonStyle  : ButtonStyle {
     .frame(maxWidth: .infinity)
     .font(fontSize.bold())
     .padding(paddingAmount)
+    .padding(.horizontal, paddingAmount/2)
     .background(.quaternary)
     .foregroundStyle(foregroundColor)
     .cornerRadius(cornerRadius)
