@@ -50,8 +50,5 @@ public struct MaterialSFBorderedButtonStyle  : ButtonStyle {
     .opacity(configuration.isPressed ? 0.8 : 1)
     .scaleEffect(configuration.isPressed ? 0.95 : 1)
     .rotationEffect(Angle(degrees: configuration.isPressed ? 2 : 0))
-    .animation(reduceMotion ? nil : Animation.spring(response: 0.2,
-                                                     dampingFraction: 0.4,
-                                                     blendDuration: 0.4), value: configuration.isPressed)
   }
 }
