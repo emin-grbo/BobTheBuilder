@@ -10,13 +10,15 @@ public struct MaterialSFBorderedButtonStyle  : ButtonStyle {
               foregroundColor: Color = .bob,
               imageString: String? = nil,
               sfString: String? = nil,
-              cornerRadius: CGFloat = 16) {
+              cornerRadius: CGFloat = 16,
+              paddingAmount: CGFloat = 16) {
     self.fontSize = fontSize
     self.textColor = textColor
     self.foregroundColor = foregroundColor
     self.imageString = imageString
     self.sfString = sfString
     self.cornerRadius = cornerRadius
+    self.paddingAmount = paddingAmount
   }
   
   public let fontSize: Font
@@ -25,6 +27,7 @@ public struct MaterialSFBorderedButtonStyle  : ButtonStyle {
   public let imageString: String?
   public let sfString: String?
   public let cornerRadius: CGFloat
+  public let paddingAmount: CGFloat
   
   public func makeBody(configuration: Self.Configuration) -> some View {
     HStack {
@@ -39,7 +42,7 @@ public struct MaterialSFBorderedButtonStyle  : ButtonStyle {
     }
     .frame(maxWidth: .infinity)
     .font(fontSize.bold())
-    .padding()
+    .padding(paddingAmount)
     .background(.quaternary)
     .foregroundStyle(foregroundColor)
     .cornerRadius(cornerRadius)

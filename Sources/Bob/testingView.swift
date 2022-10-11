@@ -2,8 +2,10 @@ import SwiftUI
 
 struct SwiftUIView: View {
   var body: some View {
-    Text("POPULAR")
-      .materialText()
+    Button("POPULAR") {
+      //
+    }
+    .buttonStyle(MaterialSFBorderedButtonStyle())
   }
 }
 

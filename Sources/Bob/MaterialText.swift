@@ -22,4 +22,5 @@ extension View {
                            color: Color = .bob) -> some View {
     modifier(MaterialText(font: font, color: color))
   }
+
 }
