@@ -1,8 +1,11 @@
 import SwiftUI
 
 struct SwiftUIView: View {
+  
+  let date = Date().formattedMonthDay()
+  
   var body: some View {
-    Button("POPULAR") {
+    Button(date) {
       print("")
     }
     .buttonStyle(MaterialSFBorderedButtonStyle())
