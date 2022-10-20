@@ -20,8 +20,9 @@ public struct MaterialText: ViewModifier {
 
 extension View {
   public func materialText(font: Font = .caption2,
-                           color: Color = .bob) -> some View {
-    modifier(MaterialText(font: font, color: color, padding: 4))
+                           color: Color = .bob,
+                           padding: CGFloat = 4) -> some View {
+    modifier(MaterialText(font: font, color: color, padding: padding))
   }
 
 }
