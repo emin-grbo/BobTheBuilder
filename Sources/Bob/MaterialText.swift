@@ -24,5 +24,5 @@ extension View {
                            padding: CGFloat = 4) -> some View {
     modifier(MaterialText(font: font, color: color, padding: padding))
   }
-
+  
 }
