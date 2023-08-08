@@ -27,7 +27,7 @@ let package = Package(
             name: "BobTheBuilder",
             dependencies: []),
         .testTarget(
-            name: "BobTests",
+            name: "BobTheBuilderTests",
             dependencies: ["BobTheBuilder"]),
     ]
 )
