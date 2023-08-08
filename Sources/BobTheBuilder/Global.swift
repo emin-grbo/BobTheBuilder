@@ -1,5 +1,5 @@
 import SwiftUI
-
+#if os(iOS)
 public func withReduceMotionAnimation<Result>(_ animation: Animation? = .default, _ body: () throws -> Result) rethrows -> Result {
   if UIAccessibility.isReduceMotionEnabled {
     return try body()
@@ -28,3 +28,4 @@ extension View {
     modifier(AnimationWithReduceMotion(animation: animation, value: value))
   }
 }
+#endif
