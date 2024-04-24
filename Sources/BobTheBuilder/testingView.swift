@@ -5,10 +5,10 @@ struct SwiftUIView: View {
   let date = Date().formattedMonthDay()
   
   var body: some View {
-    Button(date) {
+    Button("Read The Tag") {
       print("")
     }
-    .buttonStyle(MaterialSFBorderedButtonStyle())
+    .buttonStyle(SemiRoundedButtonStyle())
   }
 }
 
