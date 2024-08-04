@@ -7,8 +7,8 @@ public struct NativeLikeButtonStyle: ButtonStyle {
 							height: CGFloat = 50,
 							sfont: Font = .title3,
 							font: Font = .body,
-							color: Color? = nil,
-							foregroundColor: Color? = nil,
+							color: Color = .accentColor,
+							foregroundColor: Color = .white,
 							cornerRadius: CGFloat = 8) {
 		self.SFIconString = SFIconString
 		self.fullWidth = fullWidth
@@ -25,15 +25,15 @@ public struct NativeLikeButtonStyle: ButtonStyle {
 	public let height: CGFloat
 	public let sfont: Font
 	public let font: Font
-	public let color: Color?
-	public let foregroundColor: Color?
+	public let color: Color
+	public let foregroundColor: Color
 	public let cornerRadius: CGFloat
 	
 	public func makeBody(configuration: Self.Configuration) -> some View {
 		ZStack {
 			Group {
 				RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-					.fill(color ?? Color.blue)
+					.fill(color)
 					.frame(height: height)
 					.cornerRadius(cornerRadius)
 		}
@@ -47,7 +47,7 @@ public struct NativeLikeButtonStyle: ButtonStyle {
 					.bold()
 			}
 			.padding(.horizontal, 8)
-			.foregroundColor(foregroundColor ?? Color.white)
+			.foregroundColor(foregroundColor)
 		}
 		.fullWidthed(fullWidth: fullWidth)
 		.opacity(configuration.isPressed ? 0.5 : 1)
