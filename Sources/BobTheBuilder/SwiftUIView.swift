@@ -5,8 +5,9 @@ struct SwiftUIView: View {
   let date = Date().formattedMonthDay()
   
   var body: some View {
-		Button("Test"){}
+		Button("Button"){}
 			.buttonStyle(NativeLikeButtonStyle(SFIconString: "circle.fill"))
+			.padding(.horizontal, 40)
   }
 }
 

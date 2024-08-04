@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct NativeLikeButtonStyle: ButtonStyle {
+public struct NativeLikeButtonStyle: ButtonStyle {
 	
 	public init(SFIconString: String? = nil,
 							fullWidth: Bool = true,
