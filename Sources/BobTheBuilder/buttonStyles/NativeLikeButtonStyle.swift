@@ -4,7 +4,7 @@ public struct NativeLikeButtonStyle: ButtonStyle {
 	
 	public init(SFIconString: String? = nil,
 							fullWidth: Bool = true,
-							height: CGFloat = 60,
+							height: CGFloat = 50,
 							sfont: Font = .title3,
 							font: Font = .body,
 							color: Color? = nil,
