@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "BobTheBuilder",
     platforms: [
-        .macOS(.v12),
+        .macOS(.v13),
         .iOS(.v16),
         .watchOS(.v7)
     ],
